@@ -1,4 +1,3 @@
-#include <stdio.h>
 # include <unistd.h>
 /**
  * main - C Program that prints exactly and that piece of art is useful
