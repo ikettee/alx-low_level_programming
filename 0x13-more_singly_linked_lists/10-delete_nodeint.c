@@ -5,32 +5,40 @@
  * delete_nodeint_at_index - a function that deletes the node at
  * index of a listint_t linked list
  * @head: the head of a double pointer
- * @index: index
+ * @index: index of the node
  * Return: 1 if it succeeded, or -1 if it failed
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-	unsigned int g;
-	listint_t *temp, *next;
+	listint_t *temp_1 = *head;
+	listint_t *temp_2 = NULL;
+	unsigned int g = 0;
 
-	if (head == NULL || *head == NULL)
+	if (head == NULL)
 		return (-1);
+
 	if (index == 0)
 	{
-		next = (*head)->next;
-		free(*head);
-		*head = next;
+		*head = (*head)->next;
+		free(temp_1);
 		return (1);
 	}
-	temp = *head;
-	for (g = 0; g < index - 1; g++)
+
+	while (g < index)
 	{
-		if (temp->next == NULL)
+		if (!temp_1)
 			return (-1);
-		temp = temp->next;
+
+		temp_2 = temp_1;
+		temp_1 = temp_1->next;
+		g++
 	}
-	next = temp->next;
-	temp->next = next->next;
-	free(next);
+
+	if (!temp_1)
+		return (-1);
+
+	temp_2->next = temp_1->next;
+	free(temp_1);
+
 	return (1);
 }
