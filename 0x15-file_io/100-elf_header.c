@@ -18,8 +18,8 @@ void check_elf(unsigned char *e_ident);
 void print_magic(unsigned char *e_ident);
 
 /**
- * check_elf - Checks to see if a file is an elf file or not.
- * @e_ident: An array containing the ELF magic numbers pointer.
+ * check_elf - Checks to see if a file is an elf 
+ * @e_ident: An array containing tbers pointer.
  *
  * Description: If the file is not an ELF file - exit code 98.
  */
@@ -41,10 +41,10 @@ void check_elf(unsigned char *e_ident)
 }
 
 /**
- * print_magic - Prints an ELF header's magic numbers.
- * @e_ident: An array containing the ELF magic numbers pointer.
+ * print_magic - Prints an ELF header's magic 
+ * @e_ident: An array containing the ELF magic numbers 
  *
- * Description: Spaces separates the magic numbers.
+ * Description: Spaces separates the magic nu
  */
 void print_magic(unsigned char *e_ident)
 {
